@@ -1,0 +1,87 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+	/* --- 1. Brand Colors (Shades & Semantic) --- */
+	--color-primary: #e0b629; /* Main Gold */
+	--color-primary-light: #f1d67a; /* For soft highlights */
+	--color-primary-dark: #b38d1d; /* For deep accents/hover */
+
+	--color-background-light: #f8f7f6; /* Bone/Off-white */
+	--color-background-dark: #1a1814; /* Deep Obsidian (slightly darker than before) */
+
+	--color-surface-card: #ffffff;
+	--color-surface-dark: #26221a;
+
+	/* --- 2. Typography (Fonts & Sizes) --- */
+	--font-display: "Inter", sans-serif;
+	--font-serif: "Playfair Display", serif;
+
+	/* Semantic Font Sizes */
+	--text-hero: 4.5rem; /* For large taglines */
+	--text-display: 3rem; /* Section headings */
+	--text-subheading: 1.5rem;
+	--text-body: 1rem;
+	--text-tiny: 0.75rem;
+
+	/* Font Weights */
+	--font-weight-thin: 100;
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+
+	/* --- 3. Spacing & Borders --- */
+	--radius-sm: 0.125rem;
+	--radius-default: 0.25rem;
+	--radius-lg: 0.5rem;
+	--radius-xl: 0.75rem;
+	--radius-2xl: 1.5rem; /* For premium "Google-style" cards */
+	--radius-full: 9999px;
+
+	/* --- 4. Shadows (Custom Depth) --- */
+	--shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+	--shadow-gold: 0 10px 30px -10px rgba(224, 182, 41, 0.3);
+}
+
+/* --- 5. Custom Utilities --- */
+
+@utility masonry-grid {
+	column-count: 3;
+	column-gap: 1.5rem;
+	@media (max-width: 1024px) {
+		column-count: 2;
+	}
+	@media (max-width: 640px) {
+		column-count: 1;
+	}
+}
+
+@utility masonry-item {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 1.5rem;
+}
+
+@utility glowing-border {
+	box-shadow: 0 0 20px rgba(224, 182, 41, 0.3);
+	border: 1px solid rgba(224, 182, 41, 0.4);
+}
+
+/* Text Reveal Animation */
+@utility text-reveal {
+	animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes reveal {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
