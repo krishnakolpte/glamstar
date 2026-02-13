@@ -1,11 +1,18 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
-import celabrity from "@/assets/s1winner.jpeg";
 
-export default function CelebritySpotlight() {
+export default function CelebritySpotlight({
+	season,
+	guest,
+	guestImage,
+}: {
+	season: number;
+	guest: string;
+	guestImage: StaticImageData;
+}) {
 	const containerRef = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
@@ -38,16 +45,16 @@ export default function CelebritySpotlight() {
 							initial={{ y: "100%" }}
 							whileInView={{ y: 0 }}
 							transition={{ duration: 0.8, ease: "circOut" }}
-							className="block"
+							className="block uppercase"
 						>
-							SHARAN
+							{guest}
 						</motion.span>
 					</h2>
 
 					<div className="space-y-6 md:space-y-8">
 						<p className="text-stone-400 font-display font-light text-base md:text-lg leading-relaxed max-w-md">
-							The icon who graced our Season 2 finale with her
-							presence. Sharan brought an air of global
+							The icon who graced our Season {season} finale with
+							her presence. {guest} brought an air of global
 							sophistication and shared her journey, cementing her
 							status as a true mentor to the Shining Glamstar
 							community.
@@ -73,12 +80,12 @@ export default function CelebritySpotlight() {
 					<motion.div style={{ y }} className="relative z-10">
 						<div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
 							<Image
-								src={celabrity}
+								src={guestImage}
 								alt="Sharan Celebrity Portrait"
 								fill
 								sizes="(max-width: 768px) 100vw, 50vw"
 								priority
-								className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-in-out"
+								className="object-cover"
 							/>
 
 							{/* Responsive Floating Tag */}

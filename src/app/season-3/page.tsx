@@ -1,18 +1,15 @@
-import GallerySection from "@/components/home/GallerySection";
-import CelebritySpotlight from "@/components/season-2/CelebritySpotlight";
-import SeasonTwoHero from "@/components/season-2/Hero";
-import VenueSummary from "@/components/season-2/VenueSummary";
-import WinnersSection from "@/components/season-2/WinnersSection";
-import React from "react";
+import LargeCTA from "@/components/season-3/LargeCTA";
+import RegistrationHero from "@/components/season-3/RegistrationHero";
+import SelectionProcess from "@/components/season-3/SelectionProcess";
+import WhatWeOffer from "@/components/season-3/WhatWeOffer";
 
 function page() {
 	return (
 		<>
-			<SeasonTwoHero />
-			<WinnersSection />
-			<CelebritySpotlight />
-			<VenueSummary />
-			<GallerySection />
+			<RegistrationHero />
+			<WhatWeOffer />
+			<SelectionProcess />
+			<LargeCTA />
 		</>
 	);
 }
