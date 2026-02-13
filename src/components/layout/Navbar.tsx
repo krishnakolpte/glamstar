@@ -89,8 +89,8 @@ export default function Navbar() {
 								<span className="relative inline-flex rounded-full h-2 w-2 bg-primary shadow-[0_0_10px_#e0b629]"></span>
 							</span>
 							{/* Animated Tooltip */}
-							<span className="absolute -top-10 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-500 bg-primary text-background-dark text-[9px] px-3 py-1 rounded-sm font-black shadow-2xl whitespace-nowrap">
-								REGISTERING NOW
+							<span className="absolute -top-4 left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-500 bg-primary text-background-dark text-[9px] px-3 py-1 rounded-sm font-black shadow-2xl whitespace-nowrap">
+								REGISTER NOW
 							</span>
 						</Link>
 

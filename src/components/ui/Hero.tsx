@@ -1,12 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import higlightImage from "@/assets/gallery/g3.jpeg";
+import Image, { StaticImageData } from "next/image";
 
-export default function SeasonTwoHero() {
+export default function SeasonTwoHero({
+	title,
+	bagroundImage,
+}: {
+	title: string;
+	bagroundImage: StaticImageData;
+}) {
 	return (
-		<header className="relative h-[85vh] w-full overflow-hidden flex items-end">
+		<header className="relative h-[100vh] w-full overflow-hidden flex items-end">
 			{/* Background Image with Slow Zoom Effect */}
 			<motion.div
 				initial={{ scale: 1.1 }}
@@ -15,7 +20,7 @@ export default function SeasonTwoHero() {
 				className="absolute inset-0"
 			>
 				<Image
-					src={higlightImage}
+					src={bagroundImage}
 					alt="Season Two High Fashion"
 					fill
 					priority
@@ -37,7 +42,7 @@ export default function SeasonTwoHero() {
 					</span>
 
 					<h1 className="text-6xl md:text-9xl font-black text-white leading-[0.85] mb-8 tracking-tighter">
-						SEASON TWO
+						{title}
 						<br />
 						<span className="italic font-serif font-light text-primary">
 							HIGHLIGHTS
