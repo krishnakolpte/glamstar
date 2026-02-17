@@ -85,3 +85,15 @@
 		opacity: 1;
 	}
 }
+
+@layer components {
+	.register-label {
+		@apply block text-[10px] font-bold uppercase tracking-[0.2em] text-primary;
+	}
+
+	.register-input {
+		@apply w-full px-0 py-3 bg-transparent border-0 border-b border-white/20 
+           focus:ring-0 focus:border-primary transition-all text-lg 
+           placeholder:text-white/10 font-light outline-0;
+	}
+}
