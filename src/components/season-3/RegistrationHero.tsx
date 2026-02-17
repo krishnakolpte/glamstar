@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import higlightImage from "@/assets/gallery/g3.jpeg";
+import Link from "next/link";
 
 export default function RegistrationHero() {
 	const [timeLeft, setTimeLeft] = useState({
@@ -130,14 +131,13 @@ export default function RegistrationHero() {
 					className="flex flex-col md:flex-row items-center justify-center gap-6"
 				>
 					<button className="group relative w-full md:w-auto px-12 py-5 bg-primary text-background-dark font-black rounded-sm overflow-hidden transition-all hover:pr-16">
-						<span className="relative z-10 uppercase tracking-widest text-xs">
+						<Link
+							href={"/register#register"}
+							className="relative z-10 uppercase tracking-widest text-xs"
+						>
 							Start My Journey
-						</span>
+						</Link>
 						<div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300" />
-					</button>
-
-					<button className="w-full md:w-auto px-12 py-5 border border-white/10 text-white font-bold rounded-sm hover:bg-white/5 transition-colors uppercase tracking-widest text-xs">
-						Download Prospectus
 					</button>
 				</motion.div>
 			</div>

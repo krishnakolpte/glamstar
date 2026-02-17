@@ -38,7 +38,7 @@ export default function Navbar() {
 					<Link href="/" className="flex items-center gap-3 group">
 						<div className="relative w-11 h-11 overflow-hidden rounded-full border-2 border-primary/40 bg-background-dark shadow-gold/20 shadow-lg">
 							<Image
-								src="/vercel.svg"
+								src="/logo.png"
 								alt="Shining Glamstar Logo"
 								fill
 								className="object-contain p-2 group-hover:rotate-12 transition-transform duration-500"

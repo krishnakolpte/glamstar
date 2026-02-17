@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import higlightImage from "@/assets/gallery/g10.jpeg";
+import Link from "next/link";
 
 export default function LargeCTA() {
 	return (
@@ -53,13 +54,15 @@ export default function LargeCTA() {
 					</motion.p>
 
 					<div className="flex flex-col sm:flex-row gap-6">
-						<motion.button
-							whileHover={{ scale: 1.02 }}
-							whileTap={{ scale: 0.98 }}
-							className="px-12 py-5 cursor-pointer bg-primary text-background-dark text-lg font-black rounded-sm shadow-xl shadow-primary/20 transition-all uppercase tracking-widest hover:bg-white"
-						>
-							Apply Now for Season 3
-						</motion.button>
+						<Link href={"/register#register"}>
+							<motion.button
+								whileHover={{ scale: 1.02 }}
+								whileTap={{ scale: 0.98 }}
+								className="px-12 py-5 cursor-pointer bg-primary text-background-dark text-lg font-black rounded-sm shadow-xl shadow-primary/20 transition-all uppercase tracking-widest hover:bg-white"
+							>
+								Apply Now for Season 3
+							</motion.button>
+						</Link>
 					</div>
 				</div>
 			</div>

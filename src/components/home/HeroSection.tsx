@@ -99,7 +99,7 @@ export default function HeroSection() {
 								</p>
 
 								<Link
-									href="/register"
+									href="/season-3"
 									className="w-full py-5 bg-primary text-background-dark font-black text-[11px] rounded-xl uppercase tracking-[0.2em] shadow-gold hover:bg-white transition-all flex items-center justify-center gap-3 group/btn"
 								>
 									Apply to Walk
