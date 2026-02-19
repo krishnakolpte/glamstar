@@ -1,20 +1,8 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
+import Image, { StaticImageData } from "next/image"; // Added Image import
 import { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
-
-// Assets
-import img1 from "@/assets/gallery/g1.jpeg";
-import img2 from "@/assets/gallery/g2.jpeg";
-import img3 from "@/assets/gallery/g3.jpeg";
-import img4 from "@/assets/gallery/g4.jpeg";
-import img5 from "@/assets/gallery/g5.jpeg";
-import img6 from "@/assets/gallery/g6.jpeg";
-import img7 from "@/assets/gallery/g7.jpeg";
-import img8 from "@/assets/gallery/g8.jpeg";
-import img9 from "@/assets/gallery/g9.jpeg";
-import img10 from "@/assets/gallery/g10.jpeg";
 
 interface GalleryItem {
 	id: number;
@@ -23,20 +11,14 @@ interface GalleryItem {
 	category: string;
 }
 
-const GALLERY_DATA: GalleryItem[] = [
-	{ id: 1, src: img1, title: "Avant-Garde Structure", category: "Couture" },
-	{ id: 2, src: img2, title: "Silk Movement", category: "Editorial" },
-	{ id: 3, src: img3, title: "Modern Silhouette", category: "Runway" },
-	{ id: 4, src: img4, title: "The Golden Hour", category: "Couture" },
-	{ id: 5, src: img5, title: "Ethereal Textures", category: "Editorial" },
-	{ id: 6, src: img6, title: "Midnight Couture", category: "Runway" },
-	{ id: 7, src: img7, title: "Stellar Grace", category: "Couture" },
-	{ id: 8, src: img8, title: "Urban Nomad", category: "Editorial" },
-	{ id: 9, src: img9, title: "Luxe Heritage", category: "Runway" },
-	{ id: 10, src: img10, title: "Velvet Night", category: "Couture" },
-];
-
-const GallerySection = () => {
+// Fixed: Explicitly typed as an array GalleryItem[]
+const GallerySection = ({
+	title,
+	GALLERY_DATA,
+}: {
+	title: { t1: string; t2: string };
+	GALLERY_DATA: GalleryItem[];
+}) => {
 	const containerRef = useRef<HTMLElement>(null);
 	const isInView = useInView(containerRef, {
 		once: true,
@@ -47,11 +29,11 @@ const GallerySection = () => {
 		<section
 			ref={containerRef}
 			id="gallery"
-			className="py-32 bg-background-dark relative overflow-hidden"
+			className="py-20 md:py-32 bg-background-dark relative overflow-hidden"
 		>
 			<div className="max-w-[1400px] mx-auto px-6 relative z-10">
 				{/* Header Section */}
-				<div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+				<div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
 					<div className="max-w-2xl">
 						<motion.div
 							initial={{ opacity: 0, x: -20 }}
@@ -70,9 +52,9 @@ const GallerySection = () => {
 							transition={{ delay: 0.2, duration: 0.8 }}
 							className="text-5xl md:text-8xl font-serif font-bold text-white leading-[0.85] tracking-tighter uppercase"
 						>
-							Visual <br />
+							{title.t1} <br />
 							<span className="italic font-light text-primary pr-4">
-								Poetry
+								{title.t2}
 							</span>
 						</motion.h2>
 					</div>
@@ -102,14 +84,14 @@ const GallerySection = () => {
 								delay: (index % 3) * 0.15,
 								ease: [0.215, 0.61, 0.355, 1],
 							}}
-							className="relative break-inside-avoid group cursor-none"
+							className="relative break-inside-avoid group cursor-none mb-8"
 						>
 							<div className="relative overflow-hidden rounded-sm bg-zinc-900 border border-white/[0.05]">
 								<Image
 									src={item.src}
 									alt={item.title}
 									placeholder="blur"
-									className="w-full h-auto object-cover transition-all duration-[1.5s] ease-out grayscale group-hover:grayscale-0 group-hover:scale-110"
+									className="w-full h-auto object-cover transition-all duration-[1.5s] ease-out group-hover:scale-110"
 								/>
 
 								{/* Interactive Overlay */}
@@ -133,8 +115,6 @@ const GallerySection = () => {
 											{item.title}
 										</motion.h3>
 									</div>
-
-									{/* Small Decorative Line */}
 									<div className="w-0 group-hover:w-full h-[1px] bg-primary/30 mt-4 transition-all duration-700 delay-200"></div>
 								</div>
 							</div>

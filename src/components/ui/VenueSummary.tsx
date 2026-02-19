@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { MapPin, Camera, Calendar, Users } from "lucide-react";
-import imageVenue from "@/assets/gallery/g1.jpeg";
 
-export default function VenueSummary() {
+export default function VenueSummary({
+	imageVenue,
+}: {
+	imageVenue: StaticImageData;
+}) {
 	return (
 		<section className="py-24 max-w-7xl mx-auto px-6">
 			<motion.div
