@@ -96,7 +96,7 @@ export default function Navbar() {
 
 						{/* CTA BUTTON */}
 						<Link
-							href="/season-3"
+							href="/register#register"
 							className="glowing-border px-8 py-3.5 bg-primary text-background-dark text-[10px] font-black uppercase tracking-[0.25em] rounded-full hover:scale-105 hover:bg-white transition-all active:scale-95 font-display flex items-center gap-2 group shadow-xl"
 						>
 							Apply Now
@@ -177,7 +177,7 @@ export default function Navbar() {
 					</Link>
 
 					<Link
-						href="/season-3"
+						href="/register#register"
 						onClick={closeMenu}
 						className="mt-6 px-6 py-5 bg-primary text-center text-background-dark text-sm font-black uppercase tracking-[0.2em] rounded-xl shadow-gold transition-all font-display flex items-center justify-center gap-3 active:scale-95"
 					>

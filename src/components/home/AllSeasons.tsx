@@ -71,47 +71,49 @@ export default function PastSeasons() {
 				{/* Grid Layout */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
 					{seasons.map((season, idx) => (
-						<div key={season.id} className="group cursor-pointer">
-							<div className="relative aspect-[16/10] md:aspect-video rounded-2xl overflow-hidden mb-8 glowing-border p-[1px]">
-								<div className="relative w-full h-full overflow-hidden rounded-[1.1rem]">
-									<Image
-										src={season.image}
-										alt={season.title}
-										fill
-										className="w-full h-full object-cover   group-hover:scale-110 transition-all duration-[1.5s] ease-out"
-									/>
+						<Link href={`/season-${idx + 1}`} key={season.id}>
+							<div className="group cursor-pointer">
+								<div className="relative aspect-[16/10] md:aspect-video rounded-2xl overflow-hidden mb-8 glowing-border p-[1px]">
+									<div className="relative w-full h-full overflow-hidden rounded-[1.1rem]">
+										<Image
+											src={season.image}
+											alt={season.title}
+											fill
+											className="w-full h-full object-cover   group-hover:scale-110 transition-all duration-[1.5s] ease-out"
+										/>
 
-									{/* Glassmorphism Badge */}
-									<div className="absolute top-6 left-6 px-4 py-2 bg-background-dark/60 backdrop-blur-md border border-white/10 text-primary text-[10px] font-black uppercase tracking-widest rounded-full">
-										{season.tag}
-									</div>
+										{/* Glassmorphism Badge */}
+										<div className="absolute top-6 left-6 px-4 py-2 bg-background-dark/60 backdrop-blur-md border border-white/10 text-primary text-[10px] font-black uppercase tracking-widest rounded-full">
+											{season.tag}
+										</div>
 
-									{/* Hover Overlay */}
-									<div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-500" />
-								</div>
-							</div>
-
-							<div className="flex justify-between items-start group-hover:translate-x-2 transition-transform duration-500">
-								<div>
-									<h4 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display tracking-tight">
-										{season.title}
-									</h4>
-									<div className="flex items-center gap-3">
-										<p className="text-white/40 text-xs font-bold uppercase tracking-widest">
-											{season.location}
-										</p>
-										<div className="w-1 h-1 rounded-full bg-primary/40"></div>
-										<p className="text-white/40 text-xs font-bold uppercase tracking-widest">
-											{season.stats}
-										</p>
+										{/* Hover Overlay */}
+										<div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-500" />
 									</div>
 								</div>
 
-								<div className="p-3 rounded-full border border-white/10 text-white group-hover:bg-primary group-hover:text-background-dark group-hover:border-primary transition-all duration-500 -rotate-45 group-hover:rotate-0">
-									<ArrowUpRight size={20} />
+								<div className="flex justify-between items-start group-hover:translate-x-2 transition-transform duration-500">
+									<div>
+										<h4 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors font-display tracking-tight">
+											{season.title}
+										</h4>
+										<div className="flex items-center gap-3">
+											<p className="text-white/40 text-xs font-bold uppercase tracking-widest">
+												{season.location}
+											</p>
+											<div className="w-1 h-1 rounded-full bg-primary/40"></div>
+											<p className="text-white/40 text-xs font-bold uppercase tracking-widest">
+												{season.stats}
+											</p>
+										</div>
+									</div>
+
+									<div className="p-3 rounded-full border border-white/10 text-white group-hover:bg-primary group-hover:text-background-dark group-hover:border-primary transition-all duration-500 -rotate-45 group-hover:rotate-0">
+										<ArrowUpRight size={20} />
+									</div>
 								</div>
 							</div>
-						</div>
+						</Link>
 					))}
 				</div>
 			</div>
